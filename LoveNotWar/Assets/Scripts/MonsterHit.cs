@@ -6,19 +6,25 @@ using UnityEngine;
 public class MonsterHit : MonoBehaviour
 {
 
-    public SpawnMonster SpawnMonster;
+    public const int StartHealth = 1;
+    public const int Totalhealth = 2;
+
+    public int currentHealth;
+
 
     // Starts out by detecting the Spawn Monster Object
     void Start()
     {
-        SpawnMonster = FindObjectOfType<SpawnMonster>();
+        // SpawnMonster = FindObjectOfType<SpawnMonster>();
+
+        currentHealth = StartHealth;
     }
 
     private void OnCollisionEnter(Collision collision) 
     {
         if(collision.collider.tag == "Heart")
         {
-            SpawnMonster.IncreaseHealth();
+            currentHealth += 1;
         }
     }
 }
