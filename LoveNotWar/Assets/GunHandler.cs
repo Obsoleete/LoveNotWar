@@ -27,6 +27,7 @@ public class GunHandler : MonoBehaviour
                 Vector3 cameraPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3 aim = new Vector3(cameraPosition.x - transform.position.x, cameraPosition.y - transform.position.y, 0.0f).normalized;
                 newHeart.GetComponent<HeartMovement>().SetMove(aim.x, aim.y);
+                newHeart.transform.Rotate(0.0f, 180.0f, 0.0f);
             }
         }
     }
